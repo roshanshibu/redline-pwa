@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Knob } from "react-rotary-knob";
 import * as skins from "react-rotary-knob-skin-pack";
-import { UseSpring, animated, useSpring } from "react-spring";
+import { animated, useSpring } from "react-spring";
 import "./App.css";
 
 function App() {
