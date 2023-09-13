@@ -1,5 +1,10 @@
+body{
+  background-color: #111111;
+}
 .knobAndRainbow{
   position: relative;
+  margin-top: 50px;
+  margin-left: 50px;
 }
 .knobOverride{
   position: absolute !important;

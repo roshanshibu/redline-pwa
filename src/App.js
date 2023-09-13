@@ -20,7 +20,9 @@ function App() {
       setRainbow("violet,indigo,blue,green,orange,yellow,red,violet");
     else {
       if (newPos > 20)
-        setRainbow("red,blue,blue,orange,orange,yellow,yellow,red");
+        setRainbow(
+          "#D02323, #EBD514, #0FCA43, #0BBBE1, #CE2777, #D02323, #D02323, #D02323"
+        );
       else setRainbow("violet,green,green,green,green,green,green,violet");
     }
   };
