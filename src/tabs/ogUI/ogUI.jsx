@@ -7,7 +7,6 @@ let orange = "#DA681D";
 let yellow = "#E9D514";
 let green = "#27CB3E";
 let blue = "#2EA1CE";
-let indigo = "#5682B8";
 let violet = "#8132B2";
 let black = "#111111";
 
