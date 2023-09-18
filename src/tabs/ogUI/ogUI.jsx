@@ -10,7 +10,7 @@ const OgUI = () => {
   const [green, setGreen] = useState("#094211");
   const [blue, setBlue] = useState("#0b384a");
   const [violet, setViolet] = useState("#36114c");
-  const [black, setBlack] = useState("#111111");
+  let black = "#111111";
 
   const [innerCircleText, setInnerCircleText] = useState("Rock");
   const [innerCircleTextGlow, setInnerCircleTextGlow] = useState("#cf2431");
