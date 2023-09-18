@@ -2,6 +2,15 @@ import { useState } from "react";
 import "./ogUI.css";
 import NormalKnob from "../../components/NormalKnob/NormalKnob";
 
+let red = "#CF2431";
+let orange = "#DA681D";
+let yellow = "#E9D514";
+let green = "#27CB3E";
+let blue = "#2EA1CE";
+let indigo = "#5682B8";
+let violet = "#8132B2";
+let black = "#111111";
+
 const OgUI = () => {
   const [knobPos, setKnobPos] = useState(0);
   const updateKnobPos = (newPos) => {
@@ -13,15 +22,15 @@ const OgUI = () => {
       <NormalKnob knobPos={knobPos} updateKnobPos={updateKnobPos} />
       {/* <p>{knobPos}</p> */}
       <div className="ogRainbowContainer">
-        <span className="circle red"></span>
-        <span className="circle orange"></span>
-        <span className="circle yellow"></span>
-        <span className="circle green"></span>
-        <span className="circle blue"></span>
-        <span className="circle violet"></span>
-        <span className="circle black"></span>
+        <span className="circle" style={{ backgroundColor: red }}></span>
+        <span className="circle" style={{ backgroundColor: orange }}></span>
+        <span className="circle" style={{ backgroundColor: yellow }}></span>
+        <span className="circle" style={{ backgroundColor: green }}></span>
+        <span className="circle" style={{ backgroundColor: blue }}></span>
+        <span className="circle" style={{ backgroundColor: violet }}></span>
+        <span className="circle" style={{ backgroundColor: black }}></span>
         <div className="innerCircleTextContainer">
-          <p className="innerCircleText">Metal</p>
+          <p className="innerCircleText">Electronic</p>
         </div>
         <div className="outerCircleTextContainer">
           <p className="octTop">Beats</p>
@@ -33,6 +42,7 @@ const OgUI = () => {
         <p className="ogSongName">SongName</p>
         <p className="ogArtistName">Artist</p>
       </div>
+      <div style={{ width: "160px" }}></div>
     </div>
   );
 };

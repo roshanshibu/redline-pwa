@@ -49,28 +49,6 @@
   margin: 90px;
 }
 
-.red {
-  background-color: red;
-}
-.orange {
-  background-color: orange;
-}
-.yellow {
-  background-color: yellow;
-}
-.green {
-  background-color: green;
-}
-.blue {
-  background-color: blue;
-}
-.violet {
-  background-color: violet;
-}
-.black {
-  background-color: black;
-}
-
 .innerCircleTextContainer {
   width: 280px;
   height: 280px;
@@ -84,6 +62,7 @@
   font-size: 30px;
   font-weight: 600;
   margin: 0;
+  text-shadow: 0px 0px 10px #000000;
 }
 .outerCircleTextContainer {
   position: absolute;
@@ -92,7 +71,7 @@
   flex-direction: column;
   justify-content: space-around;
   text-align: right;
-  right: 265px;
+  right: 260px;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.396);
   font-weight: 400;
@@ -107,10 +86,12 @@
   height: 280px;
   justify-content: center;
   text-align: right;
-  padding-right: 35px;
+  position: absolute;
+  right: 15px;
 }
 .trackInfoContainer p {
   margin: 0;
+  line-height: 0.9;
 }
 
 .ogSongName {
