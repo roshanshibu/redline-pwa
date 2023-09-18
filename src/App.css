@@ -8,7 +8,7 @@ body {
 
 .tabSwitchContainer {
   display: flex;
-  color: white;
+  color: rgb(170, 170, 170);
   width: 100%;
   justify-content: center;
   gap: 25px;
