@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:800,600,400,200");
+
 body {
   background-color: #111111;
   -webkit-tap-highlight-color: transparent;
+  font-family: "DM Sans";
 }
 
 .tabSwitchContainer {

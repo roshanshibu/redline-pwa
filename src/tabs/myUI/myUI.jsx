@@ -11,7 +11,7 @@ const indigo = "#5682B8";
 const violet = "#8132B2";
 
 const MyUI = () => {
-  const [knobPos, setKnobPos] = useState(50);
+  const [knobPos, setKnobPos] = useState(0);
   const [rainbow, setRainbow] = useState(
     `${green}, ${green}, ${green}, ${green}, ${blue}, ${blue}, ${blue}, ${green}`
   );

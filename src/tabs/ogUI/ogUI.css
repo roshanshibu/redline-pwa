@@ -1,10 +1,12 @@
 .ogContainer {
   color: white;
   display: flex;
+  justify-content: space-between;
 }
 
 .ogRainbowContainer {
   position: relative;
+  width: 280px;
 }
 .circle {
   border-radius: 50%;
@@ -67,4 +69,55 @@
 }
 .black {
   background-color: black;
+}
+
+.innerCircleTextContainer {
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+}
+.innerCircleText {
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0;
+}
+.outerCircleTextContainer {
+  position: absolute;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: right;
+  right: 265px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.396);
+  font-weight: 400;
+}
+.octMiddle {
+  margin-right: 25px;
+}
+
+.trackInfoContainer {
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  justify-content: center;
+  text-align: right;
+  padding-right: 35px;
+}
+.trackInfoContainer p {
+  margin: 0;
+}
+
+.ogSongName {
+  font-size: 25px;
+  font-weight: 400;
+}
+.ogArtistName {
+  font-size: 20px;
+  font-weight: 600;
 }

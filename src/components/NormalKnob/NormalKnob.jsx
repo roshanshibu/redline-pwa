@@ -16,6 +16,7 @@ const NormalKnob = (props) => {
       style={{
         width: "150px",
         height: "150px",
+        marginTop: "60px",
       }}
     />
   );
