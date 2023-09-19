@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./ogUI.css";
 import NormalKnob from "../../components/NormalKnob/NormalKnob";
 
@@ -15,6 +15,18 @@ const OgUI = () => {
   const [innerCircleText, setInnerCircleText] = useState("Rock");
   const [innerCircleTextGlow, setInnerCircleTextGlow] = useState("#cf2431");
 
+  const [songUrl, setSongUrl] = useState("");
+  const audioRef = useRef();
+
+  const updateAndPlaySong = (newSongUrl) => {
+    setSongUrl(
+      "https://raw.githubusercontent.com/roshanshibu/CocoBackend/master/songs/" +
+        newSongUrl
+    );
+    if (audioRef.current) {
+      audioRef.current.load();
+    }
+  };
   const updateKnobPos = (newPos) => {
     console.log(`new position is  ${newPos}`);
     setKnobPos(newPos);
@@ -34,12 +46,16 @@ const OgUI = () => {
       setYellow("#E9D514");
       setInnerCircleText("Electronic");
       setInnerCircleTextGlow("#e9d514");
+      updateAndPlaySong(
+        "3LAU%20feat%20Carly%20Paige%20-%20Touch%20(Official%20Video).mp3"
+      );
     }
     if (newPos > 35) {
       setYellow("#453f07");
       setGreen("#27CB3E");
       setInnerCircleText("HipHop");
       setInnerCircleTextGlow("#27cb3e");
+      updateAndPlaySong("matoma%20slow%20r3hab%20remix.mp3");
     }
     if (newPos > 50) {
       setGreen("#094211");
@@ -52,6 +68,9 @@ const OgUI = () => {
       setViolet("#8132B2");
       setInnerCircleText("Jazz");
       setInnerCircleTextGlow("#8132b2");
+      updateAndPlaySong(
+        "Ed%20Sheeran%20-%20Beautiful%20People%20(feat%20Khalid)%20%5BOfficial%20Lyric%20Video%5D.mp3"
+      );
     }
     if (newPos > 90) {
       setViolet("#36114c");
@@ -90,7 +109,18 @@ const OgUI = () => {
         <p className="ogSongName">SongName</p>
         <p className="ogArtistName">Artist</p>
       </div>
-      <div style={{ width: "160px" }}></div>
+      <div style={{ width: "160px" }}>
+        {" "}
+        <audio
+          src={songUrl}
+          ref={audioRef}
+          autoPlay={true}
+          // onTimeUpdate={onMusicTimeUpdate}
+          // onLoad={() => {
+          //   setDuration(audioRef.current.duration);
+          // }}
+        ></audio>
+      </div>
     </div>
   );
 };
