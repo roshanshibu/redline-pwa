@@ -4,7 +4,7 @@ import NormalKnob from "../../components/NormalKnob/NormalKnob";
 
 const OgUI = () => {
   const [knobPos, setKnobPos] = useState(0);
-  const [red, setRed] = useState("#CF2431");
+  const [red, setRed] = useState("#37090c");
   const [orange, setOrange] = useState("#DA681D");
   const [yellow, setYellow] = useState("#453f07");
   const [green, setGreen] = useState("#094211");
@@ -15,12 +15,15 @@ const OgUI = () => {
   const [innerCircleText, setInnerCircleText] = useState("Rock");
   const [innerCircleTextGlow, setInnerCircleTextGlow] = useState("#cf2431");
 
+  const [currentSongName, setCurrentSongName] = useState("");
+  const [currentArtist, setCurrentArtist] = useState("");
+
   const [songUrl, setSongUrl] = useState("");
   const audioRef = useRef();
 
   const updateAndPlaySong = (newSongUrl) => {
     setSongUrl(
-      "https://raw.githubusercontent.com/roshanshibu/CocoBackend/master/songs/" +
+      "https://raw.githubusercontent.com/roshanshibu/CocoBackend/master/songs/dat/" +
         newSongUrl
     );
     if (audioRef.current) {
@@ -30,8 +33,8 @@ const OgUI = () => {
   const updateKnobPos = (newPos) => {
     console.log(`new position is  ${newPos}`);
     setKnobPos(newPos);
-    if (newPos > 10) {
-      setRed("#CF2431");
+    if (newPos > 0) {
+      setRed("#37090c");
       setOrange("#DA681D");
       setYellow("#453f07");
       setGreen("#094211");
@@ -39,44 +42,85 @@ const OgUI = () => {
       setViolet("#36114c");
       setInnerCircleText("Rock");
       setInnerCircleTextGlow("#cf243");
+      updateAndPlaySong("rock1.mp3");
+      setCurrentSongName("Thor's Hammer");
+      setCurrentArtist("Ethan Meixsell");
     }
-    if (newPos > 25) {
+    if (newPos > 8) {
+      updateAndPlaySong("rock2.mp3");
+      setCurrentSongName("Infraction");
+      setCurrentArtist("Slash Grind");
+    }
+    if (newPos > 16) {
       setRed("#37090c");
       setOrange("#431f07");
       setYellow("#E9D514");
       setInnerCircleText("Electronic");
       setInnerCircleTextGlow("#e9d514");
-      updateAndPlaySong(
-        "3LAU%20feat%20Carly%20Paige%20-%20Touch%20(Official%20Video).mp3"
-      );
+      updateAndPlaySong("electronic1.mp3");
+      setCurrentSongName("Collide");
+      setCurrentArtist("Elektronomia");
     }
-    if (newPos > 35) {
+    if (newPos > 24) {
+      updateAndPlaySong("electronic2.mp3");
+      setCurrentSongName("Eclipse");
+      setCurrentArtist("Jim Yosef");
+    }
+    if (newPos > 32) {
       setYellow("#453f07");
       setGreen("#27CB3E");
       setInnerCircleText("HipHop");
       setInnerCircleTextGlow("#27cb3e");
-      updateAndPlaySong("matoma%20slow%20r3hab%20remix.mp3");
+      updateAndPlaySong("hiphop1.mp3");
+      setCurrentSongName("Hotline Bling");
+      setCurrentArtist("Drake");
     }
-    if (newPos > 50) {
+    if (newPos > 40) {
+      updateAndPlaySong("hiphop2.mp3");
+      setCurrentSongName("Sunflower");
+      setCurrentArtist("Post Malone");
+    }
+    if (newPos > 48) {
       setGreen("#094211");
       setBlue("#2EA1CE");
       setInnerCircleText("Country");
       setInnerCircleTextGlow("#2ea1ce");
+      updateAndPlaySong("country1.mp3");
+      setCurrentSongName("Lonesome Avenue");
+      setCurrentArtist("The 126ers");
     }
-    if (newPos > 70) {
+    if (newPos > 56) {
+      updateAndPlaySong("country2.mp3");
+      setCurrentSongName("Humidity");
+      setCurrentArtist("Silent Partner");
+    }
+    if (newPos > 64) {
       setBlue("#0b384a");
       setViolet("#8132B2");
       setInnerCircleText("Jazz");
       setInnerCircleTextGlow("#8132b2");
-      updateAndPlaySong(
-        "Ed%20Sheeran%20-%20Beautiful%20People%20(feat%20Khalid)%20%5BOfficial%20Lyric%20Video%5D.mp3"
-      );
+      updateAndPlaySong("jazz1.mp3");
+      setCurrentSongName("Silk");
+      setCurrentArtist("Giorgio Di Campo");
     }
-    if (newPos > 90) {
+    if (newPos > 72) {
+      updateAndPlaySong("jazz2.mp3");
+      setCurrentSongName("Sweet Chicago");
+      setCurrentArtist("Envadi Jacobs");
+    }
+    if (newPos > 80) {
       setViolet("#36114c");
       setRed("#CF2431");
       setInnerCircleText("Pop");
       setInnerCircleTextGlow("#cb131f");
+      updateAndPlaySong("pop1.mp3");
+      setCurrentSongName("Stay");
+      setCurrentArtist("Justin Bieber");
+    }
+    if (newPos > 88) {
+      updateAndPlaySong("pop2.mp3");
+      setCurrentSongName("Stay The Night");
+      setCurrentArtist("Sigala");
     }
   };
   return (
@@ -106,8 +150,8 @@ const OgUI = () => {
         </div>
       </div>
       <div className="trackInfoContainer">
-        <p className="ogSongName">SongName</p>
-        <p className="ogArtistName">Artist</p>
+        <p className="ogSongName">{currentSongName}</p>
+        <p className="ogArtistName">{currentArtist}</p>
       </div>
       <div style={{ width: "160px" }}>
         {" "}
@@ -115,6 +159,7 @@ const OgUI = () => {
           src={songUrl}
           ref={audioRef}
           autoPlay={true}
+          loop
           // onTimeUpdate={onMusicTimeUpdate}
           // onLoad={() => {
           //   setDuration(audioRef.current.duration);
