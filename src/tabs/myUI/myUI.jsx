@@ -2,6 +2,18 @@ import { useEffect, useRef, useState } from "react";
 import "./myUI.css";
 import RainbowKnob from "../../components/RainbowKnob/RainbowKnob";
 import PlaceholderAlbumArt from "../../assets/albumart_p.png";
+import AArock1 from "../../assets/AArock1.png";
+import AArock2 from "../../assets/AArock2.png";
+import AAelectronic1 from "../../assets/AAelectronic1.png";
+import AAelectronic2 from "../../assets/AAelectronic2.png";
+import AAhiphop1 from "../../assets/AAhiphop1.png";
+import AAhiphop2 from "../../assets/AAhiphop2.png";
+import AAcountry1 from "../../assets/AAcountry1.png";
+import AAcountry2 from "../../assets/AAcountry2.png";
+import AAjazz1 from "../../assets/AAjazz1.png";
+import AAjazz2 from "../../assets/AAjazz2.png";
+import AApop1 from "../../assets/AApop1.png";
+import AApop2 from "../../assets/AApop2.png";
 import PlayIcon from "../../assets/PlayIcon.svg";
 import PauseIcon from "../../assets/PauseIcon.svg";
 
@@ -16,8 +28,11 @@ const violet = "#8132B2";
 const MyUI = () => {
   const [knobPos, setKnobPos] = useState(0);
   const [rainbow, setRainbow] = useState(
-    `${green}, ${green}, ${green}, ${green}, ${blue}, ${blue}, ${blue}, ${green}`
+    `${orange}, ${orange}, ${orange}, ${orange}, ${orange}, ${orange}, ${orange}, ${orange}`
   );
+  const [mySongName, setMySongName] = useState("Thor's Hammer");
+  const [myArtist, setMyArtist] = useState("Ethan Meixsell");
+  const [myAlbumArt, setMyAlbumArt] = useState(AArock1);
 
   const [mySongUrl, setMySongUrl] = useState("");
   const myAudioRef = useRef();
@@ -54,44 +69,117 @@ const MyUI = () => {
     }
   };
 
+  const setRainbowAndPlay = (
+    colors,
+    songUrl,
+    artistName,
+    songName,
+    albumArtImage
+  ) => {
+    setRainbow(colors);
+    updateAndPlaySong(songUrl);
+    setMySongName(songName);
+    setMyArtist(artistName);
+    setMyAlbumArt(albumArtImage);
+  };
   const updateKnobPos = (newPos) => {
     // console.log(`new position is  ${newPos}`);
     setKnobPos(newPos);
-    if (newPos > 10)
-      setRainbow(
-        `${red}, ${red}, ${red}, ${orange}, ${orange}, ${yellow}, ${yellow}, ${red}`
+    if (newPos > 0)
+      setRainbowAndPlay(
+        `${orange}, ${orange}, ${orange}, ${orange}, ${orange}, ${orange}, ${orange}, ${orange}`,
+        "rock1.mp3",
+        "Ethan Meixsell",
+        "Thor's Hammer",
+        AArock1
       );
-    if (newPos > 20)
-      setRainbow(
-        `${orange}, ${orange}, ${yellow}, ${yellow}, ${yellow}, ${green}, ${green}, ${orange}`
+    if (newPos > 8)
+      setRainbowAndPlay(
+        `${orange}, ${orange}, ${orange}, ${orange}, ${orange}, ${orange}, ${orange}, ${orange}`,
+        "rock2.mp3",
+        "Slash Grind",
+        "Infraction",
+        AArock2
       );
-    if (newPos > 30) updateAndPlaySong("rock1.mp3");
-    setRainbow(
-      `${yellow}, ${green}, ${green}, ${green}, ${green}, ${blue}, ${blue}, ${yellow}`
-    );
+    if (newPos > 16)
+      setRainbowAndPlay(
+        `${yellow}, ${yellow}, ${yellow}, ${yellow}, ${yellow}, ${yellow}, ${yellow}, ${yellow}`,
+        "electronic1.mp3",
+        "Elektronomia",
+        "Collide",
+        AAelectronic1
+      );
+    if (newPos > 24)
+      setRainbowAndPlay(
+        `${yellow}, ${yellow}, ${yellow}, ${yellow}, ${yellow}, ${yellow}, ${yellow}, ${yellow}`,
+        "electronic2.mp3",
+        "Jim Yosef",
+        "Eclipse",
+        AAelectronic2
+      );
+    if (newPos > 32)
+      setRainbowAndPlay(
+        `${green}, ${green}, ${green}, ${green}, ${green}, ${green}, ${green}, ${green}`,
+        "hiphop1.mp3",
+        "Drake",
+        "Hotline Bling",
+        AAhiphop1
+      );
     if (newPos > 40)
-      setRainbow(
-        `${green}, ${green}, ${green}, ${green}, ${blue}, ${blue}, ${blue}, ${green}`
+      setRainbowAndPlay(
+        `${green}, ${green}, ${green}, ${green}, ${green}, ${green}, ${green}, ${green}`,
+        "hiphop2.mp3",
+        "Post Malone",
+        "Sunflower",
+        AAhiphop2
       );
-    if (newPos > 50)
-      setRainbow(
-        `${blue}, ${green}, ${green}, ${green}, ${blue}, ${blue}, ${blue}, ${blue}`
+    if (newPos > 48)
+      setRainbowAndPlay(
+        `${blue}, ${blue}, ${blue}, ${blue}, ${blue}, ${blue}, ${blue}, ${blue}`,
+        "country1.mp3",
+        "The 126ers",
+        "Lonesome Avenue",
+        AAcountry1
       );
-    if (newPos > 60)
-      setRainbow(
-        `${blue}, ${blue}, ${blue}, ${indigo}, ${indigo}, ${indigo}, ${indigo}, ${blue}`
+    if (newPos > 56)
+      setRainbowAndPlay(
+        `${blue}, ${blue}, ${blue}, ${blue}, ${blue}, ${blue}, ${blue}, ${blue}`,
+        "country2.mp3",
+        "Silent Partner",
+        "Humidity",
+        AAcountry2
       );
-    if (newPos > 70) updateAndPlaySong("electronic1.mp3");
-    setRainbow(
-      `${indigo}, ${indigo}, ${indigo}, ${indigo}, ${violet}, ${violet}, ${violet}, ${indigo}`
-    );
+    if (newPos > 64)
+      setRainbowAndPlay(
+        `${violet}, ${violet}, ${violet}, ${violet}, ${violet}, ${violet}, ${violet}, ${violet}`,
+        "jazz1.mp3",
+        "Giorgio Di Campo",
+        "Silk",
+        AAjazz1
+      );
+    if (newPos > 72)
+      setRainbowAndPlay(
+        `${violet}, ${violet}, ${violet}, ${violet}, ${violet}, ${violet}, ${violet}, ${violet}`,
+        "jazz2.mp3",
+        "Envadi Jacobs",
+        "Sweet Chicago",
+        AAjazz2
+      );
     if (newPos > 80)
-      setRainbow(
-        `${indigo}, ${indigo}, ${violet}, ${violet}, ${violet}, ${violet}, ${red}, ${indigo}`
+      setRainbowAndPlay(
+        `${red}, ${red}, ${orange}, ${orange}, ${red}, ${red}, ${red}, ${red}`,
+        "pop1.mp3",
+        "Justin Bieber",
+        "Stay",
+        AApop1
       );
-    if (newPos > 90)
-      setRainbow(
-        `${violet}, ${violet}, ${red}, ${red}, ${red}, ${orange}, ${red}, ${violet}`
+    if (newPos > 88)
+      setRainbowAndPlay(
+        `${red}, ${red}, ${red}, ${red}, ${red}, ${red}, ${red}, ${red}`,
+        "pop2.mp3",
+        "Sigala",
+        "Stay The Night",
+        AApop2
       );
   };
 
@@ -106,12 +194,17 @@ const MyUI = () => {
 
         {/* <p>{knobPos}</p> */}
         <div className="songAndArtistName">
-          <p className="mySongName">Collide</p>
-          <p className="myArtistName">Elektromania</p>
+          <p className="mySongName">{mySongName}</p>
+          <p
+            className="myArtistName"
+            style={{ color: rainbow.substring(0, 7) }}
+          >
+            {myArtist}
+          </p>
         </div>
 
         <div className="albumArtContainer">
-          <img src={PlaceholderAlbumArt} className="albumArt" alt="album art" />
+          <img src={myAlbumArt} className="albumArt" alt="album art" />
         </div>
       </div>
       <div className="bottomContainer">
