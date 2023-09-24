@@ -15,6 +15,10 @@ const OgUI = () => {
   const [innerCircleText, setInnerCircleText] = useState("Rock");
   const [innerCircleTextGlow, setInnerCircleTextGlow] = useState("#cf2431");
 
+  const [outerLabelTop, setOuterLabelTop] = useState("");
+  const [outerLabelMiddle, setOuterLabelMiddle] = useState("");
+  const [outerLabelBottom, setOuterLabelBottom] = useState("");
+
   const [currentSongName, setCurrentSongName] = useState("");
   const [currentArtist, setCurrentArtist] = useState("");
 
@@ -45,11 +49,17 @@ const OgUI = () => {
       updateAndPlaySong("rock1.mp3");
       setCurrentSongName("Thor's Hammer");
       setCurrentArtist("Ethan Meixsell");
+      setOuterLabelTop("Guitar");
+      setOuterLabelMiddle("Bass");
+      setOuterLabelBottom("Drums");
     }
     if (newPos > 8) {
       updateAndPlaySong("rock2.mp3");
       setCurrentSongName("Infraction");
       setCurrentArtist("Slash Grind");
+      setOuterLabelTop("Distortion");
+      setOuterLabelMiddle("Drums");
+      setOuterLabelBottom("Guitar");
     }
     if (newPos > 16) {
       setRed("#37090c");
@@ -60,11 +70,17 @@ const OgUI = () => {
       updateAndPlaySong("electronic1.mp3");
       setCurrentSongName("Collide");
       setCurrentArtist("Elektronomia");
+      setOuterLabelTop("Progressive");
+      setOuterLabelMiddle("House");
+      setOuterLabelBottom("EDM");
     }
     if (newPos > 24) {
       updateAndPlaySong("electronic2.mp3");
       setCurrentSongName("Eclipse");
       setCurrentArtist("Jim Yosef");
+      setOuterLabelTop("EDM");
+      setOuterLabelMiddle("DJ");
+      setOuterLabelBottom("House");
     }
     if (newPos > 32) {
       setYellow("#453f07");
@@ -74,11 +90,17 @@ const OgUI = () => {
       updateAndPlaySong("hiphop1.mp3");
       setCurrentSongName("Hotline Bling");
       setCurrentArtist("Drake");
+      setOuterLabelTop("R&B");
+      setOuterLabelMiddle("Groove");
+      setOuterLabelBottom("Soul");
     }
     if (newPos > 40) {
       updateAndPlaySong("hiphop2.mp3");
       setCurrentSongName("Sunflower");
       setCurrentArtist("Post Malone");
+      setOuterLabelTop("Rhythm");
+      setOuterLabelMiddle("Rap");
+      setOuterLabelBottom("Blues");
     }
     if (newPos > 48) {
       setGreen("#094211");
@@ -88,11 +110,17 @@ const OgUI = () => {
       updateAndPlaySong("country1.mp3");
       setCurrentSongName("Lonesome Avenue");
       setCurrentArtist("The 126ers");
+      setOuterLabelTop("Mandolin");
+      setOuterLabelMiddle("Banjo");
+      setOuterLabelBottom("Acoustic");
     }
     if (newPos > 56) {
       updateAndPlaySong("country2.mp3");
       setCurrentSongName("Humidity");
       setCurrentArtist("Silent Partner");
+      setOuterLabelTop("Acoustic");
+      setOuterLabelMiddle("Guitar");
+      setOuterLabelBottom("Ballad");
     }
     if (newPos > 64) {
       setBlue("#0b384a");
@@ -102,11 +130,17 @@ const OgUI = () => {
       updateAndPlaySong("jazz1.mp3");
       setCurrentSongName("Silk");
       setCurrentArtist("Giorgio Di Campo");
+      setOuterLabelTop("Swing");
+      setOuterLabelMiddle("Piano");
+      setOuterLabelBottom("Bebop");
     }
     if (newPos > 72) {
       updateAndPlaySong("jazz2.mp3");
       setCurrentSongName("Sweet Chicago");
       setCurrentArtist("Envadi Jacobs");
+      setOuterLabelTop("Bebop");
+      setOuterLabelMiddle("Swing");
+      setOuterLabelBottom("Trumpet");
     }
     if (newPos > 80) {
       setViolet("#36114c");
@@ -116,11 +150,17 @@ const OgUI = () => {
       updateAndPlaySong("pop1.mp3");
       setCurrentSongName("Stay");
       setCurrentArtist("Justin Bieber");
+      setOuterLabelTop("Synth");
+      setOuterLabelMiddle("Drums");
+      setOuterLabelBottom("Melodic");
     }
     if (newPos > 88) {
       updateAndPlaySong("pop2.mp3");
       setCurrentSongName("Stay The Night");
       setCurrentArtist("Sigala");
+      setOuterLabelTop("Female");
+      setOuterLabelMiddle("Dance");
+      setOuterLabelBottom("Radio");
     }
   };
   return (
@@ -144,9 +184,9 @@ const OgUI = () => {
           </p>
         </div>
         <div className="outerCircleTextContainer">
-          <p className="octTop">Beats</p>
-          <p className="octMiddle">Club</p>
-          <p className="octBottom">Dance</p>
+          <p className="octTop">{outerLabelTop}</p>
+          <p className="octMiddle">{outerLabelMiddle}</p>
+          <p className="octBottom">{outerLabelBottom}</p>
         </div>
       </div>
       <div className="trackInfoContainer">
