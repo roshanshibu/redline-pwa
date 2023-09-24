@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./myUI.css";
 import RainbowKnob from "../../components/RainbowKnob/RainbowKnob";
-import PlaceholderAlbumArt from "../../assets/albumart_p.png";
 import AArock1 from "../../assets/AArock1.png";
 import AArock2 from "../../assets/AArock2.png";
 import AAelectronic1 from "../../assets/AAelectronic1.png";
@@ -22,7 +21,6 @@ const orange = "#DA681D";
 const yellow = "#E9D514";
 const green = "#27CB3E";
 const blue = "#2EA1CE";
-const indigo = "#5682B8";
 const violet = "#8132B2";
 
 const MyUI = () => {
