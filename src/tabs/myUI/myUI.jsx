@@ -98,7 +98,7 @@ const MyUI = () => {
         </div>
 
         <div className="albumArtContainer">
-          <img src={PlaceholderAlbumArt} className="albumArt" />
+          <img src={PlaceholderAlbumArt} className="albumArt" alt="album art" />
         </div>
       </div>
       <div className="bottomContainer">
