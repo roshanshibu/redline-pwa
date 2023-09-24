@@ -25,7 +25,7 @@ const MyUI = () => {
 
   useEffect(() => {
     setDuration(myAudioRef.current.duration);
-  });
+  }, []);
 
   const onMusicTimeUpdate = () => {
     setTimeProgress(myAudioRef.current.currentTime);
