@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import "./myUI.css";
 import RainbowKnob from "../../components/RainbowKnob/RainbowKnob";
 import PlaceholderAlbumArt from "../../assets/albumart_p.png";
+import PlayIcon from "../../assets/PlayIcon.svg";
+import PauseIcon from "../../assets/PauseIcon.svg";
 
 const red = "#CF2431";
 const orange = "#DA681D";
@@ -20,6 +22,7 @@ const MyUI = () => {
   const [mySongUrl, setMySongUrl] = useState("");
   const myAudioRef = useRef();
 
+  const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [timeProgress, setTimeProgress] = useState(0);
 
@@ -31,6 +34,15 @@ const MyUI = () => {
     setTimeProgress(myAudioRef.current.currentTime);
   };
 
+  const togglePlayPause = () => {
+    if (isPlaying) {
+      myAudioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      myAudioRef.current.play();
+      setIsPlaying(true);
+    }
+  };
   const updateAndPlaySong = (newSongUrl) => {
     setMySongUrl(
       "https://raw.githubusercontent.com/roshanshibu/CocoBackend/master/songs/dat/" +
@@ -38,6 +50,7 @@ const MyUI = () => {
     );
     if (myAudioRef.current) {
       myAudioRef.current.load();
+      setIsPlaying(true);
     }
   };
 
@@ -102,7 +115,12 @@ const MyUI = () => {
         </div>
       </div>
       <div className="bottomContainer">
-        <></>
+        <img
+          src={isPlaying ? PauseIcon : PlayIcon}
+          alt="play pause icon"
+          className="playPauseIcon"
+          onClick={togglePlayPause}
+        />
         <div className="timelineContainer">
           <input
             type="range"
