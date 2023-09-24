@@ -31,8 +31,8 @@ const RainbowKnob = (props) => {
         className="wheel"
         style={{
           background: animProps.background,
-          width: "220px",
-          height: "220px",
+          width: "216px",
+          height: "216px",
         }}
       />
     </div>

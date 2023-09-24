@@ -1,0 +1,74 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 20px;
+}
+.topContainer {
+  display: flex;
+}
+.topContainer div {
+  flex: 1 1 0px;
+}
+
+.songAndArtistName {
+  text-align: center;
+  color: white;
+  line-height: 0.9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mySongName {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 400;
+}
+.myArtistName {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.albumArtContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.albumArt {
+  width: 80%;
+}
+
+.bottomContainer {
+}
+
+.timelineContainer {
+  display: flex;
+  flex-direction: column;
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+  align-self: center;
+  border-radius: 30px;
+  margin-top: 30px;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: #bebebe;
+  border-radius: 30px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 30px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -6px;
+}
