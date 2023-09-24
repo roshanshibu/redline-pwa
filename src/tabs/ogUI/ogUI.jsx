@@ -5,14 +5,14 @@ import NormalKnob from "../../components/NormalKnob/NormalKnob";
 const OgUI = () => {
   const [knobPos, setKnobPos] = useState(0);
   const [red, setRed] = useState("#37090c");
-  const [orange, setOrange] = useState("#DA681D");
+  const [orange, setOrange] = useState("#431f07");
   const [yellow, setYellow] = useState("#453f07");
   const [green, setGreen] = useState("#094211");
   const [blue, setBlue] = useState("#0b384a");
   const [violet, setViolet] = useState("#36114c");
   let black = "#111111";
 
-  const [innerCircleText, setInnerCircleText] = useState("Rock");
+  const [innerCircleText, setInnerCircleText] = useState("");
   const [innerCircleTextGlow, setInnerCircleTextGlow] = useState("#cf2431");
 
   const [outerLabelTop, setOuterLabelTop] = useState("");

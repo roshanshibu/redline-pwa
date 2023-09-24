@@ -34,3 +34,17 @@ body {
   background-color: rgb(173, 43, 43);
   border-radius: 20px;
 }
+
+/* styles for dark knob */
+#container g:nth-child(1) use {
+  fill: #474747;
+  stroke: #212121;
+}
+#container g:nth-child(2) use {
+  fill: #474747 !important;
+  stroke: #212121;
+}
+#knob g use {
+  fill: #212121 !important;
+  stroke-width: 9px;
+}
